@@ -12,6 +12,8 @@ public class test {
 
 
         int[] arr={99,79,89,77,55,62,33,11,12,54,65};
+        int[] arr1={99,79,89,77,55,62,33,11,12,54,65};
+        int[] arr2={99,79,89,77,55};
         System.out.println(arr.length);
         for (int i = 0; i < arr.length; i++) {
             System.out.println(i);
@@ -25,5 +27,6 @@ public class test {
         }
         System.out.println(Arrays.toString(arr));
 
+        System.out.println(Arrays.equals(arr,arr1));
     }
 }
