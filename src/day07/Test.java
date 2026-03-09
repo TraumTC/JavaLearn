@@ -4,7 +4,7 @@ public class Test {
     static void main(String[] args) {
 
         try{
-            System.out.println(1/0);
+            System.out.println(10/2);
         }catch(Exception e){
             System.out.println(e.getMessage());
             System.out.println(e.getClass());
@@ -14,7 +14,6 @@ public class Test {
         }finally{
             System.out.println("运行结束");
         }
-
         User u = new User();
         try {
             u.test(2);
@@ -23,7 +22,7 @@ public class Test {
         }
         Test t=new Test();
         try {
-            int add=t.add("abc");
+            int add=t.add(9);
             System.out.println(add);
         }catch(MyNumberException e){
             e.printStackTrace();
