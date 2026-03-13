@@ -54,10 +54,10 @@ public class CollectionTest {
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
-//        for(;;){
-//            if(!itr.hasNext()) return;
-//            System.out.println(itr.next());
-//        }
+        for(;;){
+            if(!itr.hasNext()) break;
+            System.out.println(itr.next());
+        }
 
 //  LinkedHashSet，可以存储一组有序且唯一的元素
 //  有序：元素的存储顺序和遍历顺序是一致的
