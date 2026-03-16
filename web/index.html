@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaLearn - 欢迎</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .content {
+            line-height: 1.8;
+            color: #333;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 JavaLearn</h1>
+        <p class="subtitle">Java 学习项目已成功启动</p>
+        <div class="content">
+            <p>欢迎访问 JavaLearn 学习平台！</p>
+            <p>Tomcat 服务器正在运行中...</p>
+            <p>项目包含 Java 基础学习和 JavaWeb 实战内容</p>
+        </div>
+        <div class="status">
+            ✓ 服务器运行正常
+        </div>
+    </div>
+</body>
+</html>
