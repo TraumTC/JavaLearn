@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class InputRunner implements Runnable {
     private Socket socket;
@@ -26,9 +27,18 @@ public class InputRunner implements Runnable {
         while (true) {
             try {
                 in = this.socket.getInputStream();
-                din = new DataInputStream(in);
-                message=din.readUTF();
-                System.out.println("\r" + this.name +":"+ message);
+                StringBuffer sb = new StringBuffer();
+                byte[] b = new byte[1024];
+                int len;
+                len=in.read(b);
+                sb.append(new String(b,0,len));
+                System.out.println("\r" + this.name +":"+ sb);
+
+//                din = new DataInputStream(in);
+//                message=din.readUTF();
+//                if(!message.equals("")){
+//                    System.out.println("\r" + this.name +":"+ message);
+//                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

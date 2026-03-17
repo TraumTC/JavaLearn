@@ -18,21 +18,23 @@ public class ServerRunnable implements  Runnable {
         DataOutputStream dos = null;
         Scanner scanner = new Scanner(System.in);
         String message=null;
-        String name = "客户端";
+        String name = "客户端";//客户端
         while(true){
+            System.out.print("服务器：");//服务器
+            message=scanner.nextLine();
             try {
 //                接收信息
 //                in = this.socket.getInputStream();
 //                din = new DataInputStream(in);
 //                message=din.readUTF();
 //                System.out.println("客户端："+ message);
-                InputRunner InputRun=new InputRunner(this.socket,in,din,message,name);
-                new Thread(InputRun).start();
 //                发送信息
-                System.out.print("服务器：");
-                message=scanner.nextLine();
                 OutRunnable outRun =new OutRunnable(out,dos,socket,message,name);
                 new Thread(outRun).start();
+                Thread.sleep(100);
+                InputRunner InputRun=new InputRunner(this.socket,in,din,message,name);
+                new Thread(InputRun).start();
+                Thread.sleep(100);
 //                out =socket.getOutputStream();
 //                dos = new DataOutputStream(out);
 //                dos.writeUTF(message);
