@@ -4,6 +4,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class OutRunnable implements Runnable {
     private OutputStream out;
@@ -28,15 +29,11 @@ public class OutRunnable implements Runnable {
             try {
                 if (message != "") {
                     out =socket.getOutputStream();
-                    dout = new DataOutputStream(out);
-                    dout.writeUTF(message);
+//                    dout = new DataOutputStream(out);
+                    out.write(message.getBytes((StandardCharsets.UTF_8)));
+                    out.flush();
                 }
-//                String name1 = "";
-//                if(this.name=="服务器") name1="客户端";
-//                if(this.name=="客户端") name1="服务器";
-
                 message="";
-//                System.out.print(name1+":");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

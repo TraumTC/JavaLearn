@@ -17,8 +17,14 @@ public class ServletTest implements Servlet {
     }
 
     @Override
-    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        System.out.println("在浏览器中打开了ServletTest");
+    public void service(ServletRequest Request, ServletResponse Response) throws ServletException, IOException {
+        String id = Request.getParameter("id");
+        System.out.println("浏览器传来的参数为" + id);
+        String message = "hello world";
+        Response.getWriter().write(message);
+
+
+//        System.out.println("在浏览器中打开了ServletTest");
     }
 
     @Override
