@@ -1,4 +1,4 @@
-package JavaWeb.day06;
+package JavaWeb.day05;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
