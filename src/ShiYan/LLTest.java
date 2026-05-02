@@ -17,12 +17,15 @@ public class LLTest {
         parseTable.get("E'").put("+", "+TE'");
         parseTable.get("E'").put(")", "ε");
         parseTable.get("E'").put("#", "ε");
+
         parseTable.get("T").put("i", "FT'");
         parseTable.get("T").put("(", "FT'");
+
         parseTable.get("T'").put("+", "ε");
         parseTable.get("T'").put("*", "*FT'");
         parseTable.get("T'").put(")", "ε");
         parseTable.get("T'").put("#", "ε");
+
         parseTable.get("F").put("i", "i");
         parseTable.get("F").put("(", "(E)");
     }
